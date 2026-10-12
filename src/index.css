@@ -1,0 +1,480 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* ── Romantic Love Theme ───────────────────────────────────────────────── */
+    --bg-midnight:   #100810;
+    --bg-cherry:     #351020;
+    --bg-burgundy:   #641C3A;
+    --bg-panel:      #1E0D18;
+    --bg-graphite:   #2C1422;
+    --pink-accent:   #FF5C93;
+    --blush:         #FFB6CC;
+    --rose-gold:     #E8B4A0;
+    --white:         #FFF5F8;
+    --muted:         #C8A0B0;
+    --electric-violet: #641C3A;
+    --neon-pink:       #FF5C93;
+    --icy-cyan:        #C8A0B0;
+    --soft-lavender:   #C8A0B0;
+    --champagne-gold:  #E8B4A0;
+    --text-white:      #FFF5F8;
+  }
+
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--bg-midnight);
+    color: var(--white);
+    font-family: 'Outfit', 'Inter', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-handwriting {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-mono-code {
+  font-family: 'Space Mono', monospace;
+}
+
+/* ── Glass Panels ───────────────────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(30, 13, 24, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 92, 147, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+
+.glass-card {
+  background: rgba(44, 20, 34, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 92, 147, 0.10);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 92, 147, 0.40);
+  box-shadow: 0 8px 30px rgba(255, 92, 147, 0.22);
+}
+
+.glass-dock {
+  background: rgba(18, 6, 14, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 92, 147, 0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65);
+}
+
+.dock-glass {
+  background: rgba(18, 6, 14, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 92, 147, 0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65);
+}
+
+/* ── Neon Borders ──────────────────────────────────────────────────────── */
+.neon-border-pink {
+  box-shadow: 0 0 16px rgba(255, 92, 147, 0.32), inset 0 0 10px rgba(255, 92, 147, 0.10);
+  border: 1px solid rgba(255, 92, 147, 0.50);
+}
+
+.neon-border-violet {
+  box-shadow: 0 0 16px rgba(200, 160, 176, 0.22), inset 0 0 10px rgba(200, 160, 176, 0.08);
+  border: 1px solid rgba(200, 160, 176, 0.35);
+}
+
+.neon-border-cyan {
+  box-shadow: 0 0 16px rgba(200, 160, 176, 0.25), inset 0 0 10px rgba(200, 160, 176, 0.08);
+  border: 1px solid rgba(200, 160, 176, 0.45);
+}
+
+.neon-border-gold {
+  box-shadow: 0 0 18px rgba(232, 180, 160, 0.30), inset 0 0 12px rgba(232, 180, 160, 0.10);
+  border: 1px solid rgba(232, 180, 160, 0.48);
+}
+
+/* ── Custom Scrollbars ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 92, 147, 0.22);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 92, 147, 0.48); }
+
+/* ── Terminal Scanlines ────────────────────────────────────────────────── */
+.scanlines {
+  background: linear-gradient(rgba(16, 8, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%);
+  background-size: 100% 4px;
+}
+
+/* ── Flame animation ───────────────────────────────────────────────────── */
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px #E8B4A0) drop-shadow(0 0 18px #FF5C93);
+  }
+  50% {
+    transform: scale(1.08, 0.94) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px #E8B4A0) drop-shadow(0 0 24px #FF5C93);
+  }
+}
+
+.flame-active { animation: flicker 1s infinite alternate ease-in-out; }
+.flame-smoke  { animation: smokeRise 0.8s forwards ease-out; }
+
+@keyframes smokeRise {
+  0%   { opacity: 0.8; transform: translateY(0) scale(1);   filter: blur(0px); }
+  100% { opacity: 0;   transform: translateY(-25px) scale(2.2); filter: blur(6px); }
+}
+
+/* ── Pulse Glow ────────────────────────────────────────────────────────── */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.30; transform: scale(1);    }
+  50%       { opacity: 0.60; transform: scale(1.05); }
+}
+.pulse-glow { animation: pulseGlow 4.5s infinite ease-in-out; }
+
+/* ── Shimmer Button ────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%);  }
+}
+.btn-shimmer { position: relative; overflow: hidden; }
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  animation: shimmer 2.8s infinite;
+}
+
+/* ── Star twinkle ──────────────────────────────────────────────────────── */
+@keyframes celestialTwinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50%       { opacity: 0.90; transform: scale(1.15); filter: drop-shadow(0 0 4px #FF5C93); }
+}
+.celestial-star { animation: celestialTwinkle 3s infinite ease-in-out; }
+
+/* ==========================================================================
+   HOME SCREEN COMPACT STYLES
+   ========================================================================== */
+.home-welcome-card {
+  padding: 2.5px 10px !important;
+  min-height: 23px !important;
+  font-size: 10.5px !important;
+  border-radius: 9999px !important;
+}
+
+.home-upper-section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding-top: 8px !important;
+}
+
+.home-apps-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  margin-top: 6px !important;
+}
+
+.home-apps-row-1 {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  column-gap: 8px !important;
+  justify-items: center !important;
+  width: 100% !important;
+}
+
+.home-apps-row-2 {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  margin-top: 7px !important;
+  width: 100% !important;
+}
+
+.home-app-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  width: 58px !important;
+}
+
+.home-app-icon-container {
+  width: clamp(38px, 9.5vw, 42px) !important;
+  height: clamp(38px, 9.5vw, 42px) !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 42px !important;
+  max-height: 42px !important;
+  border-radius: 11px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.home-app-icon {
+  width: clamp(19px, 5vw, 21px) !important;
+  height: clamp(19px, 5vw, 21px) !important;
+  display: block !important;
+}
+
+.home-app-label {
+  font-size: clamp(10px, 2.6vw, 11px) !important;
+  line-height: 13px !important;
+  margin-top: 3px !important;
+  max-width: 60px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-weight: 500 !important;
+  color: #FFF5F8 !important;
+}
+
+.home-app-badge {
+  position: absolute !important;
+  top: -3px !important;
+  right: -3px !important;
+  padding: 1px 3.5px !important;
+  font-size: 8px !important;
+  line-height: 9.5px !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+}
+
+.home-dock-container {
+  padding: 4px 12px !important;
+  min-height: 42px !important;
+  border-radius: 16px !important;
+  margin-bottom: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  width: 100% !important;
+  max-width: 270px !important;
+  box-sizing: border-box !important;
+}
+
+.home-dock-icon-btn {
+  width: clamp(34px, 8.5vw, 36px) !important;
+  height: clamp(34px, 8.5vw, 36px) !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.home-dock-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* ==========================================================================
+   HOME SCREEN WALLPAPER LAYER
+   ========================================================================== */
+#homeWallpaperLayer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  background-color: #100810 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+#homeWallpaperImg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+.home-protective-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 8, 16, 0.42) 0%,
+    rgba(16, 8, 16, 0.15) 40%,
+    rgba(16, 8, 16, 0.35) 80%,
+    rgba(16, 8, 16, 0.72) 100%
+  ) !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   GLOBAL APP & SCREEN CLASSES — Romantic Theme
+   ========================================================================== */
+.screen-container {
+  background-color: #100810 !important;
+  color: #FFF5F8 !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.app-header {
+  background-color: rgba(30, 13, 24, 0.97) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(255, 92, 147, 0.14) !important;
+  color: #FFF5F8 !important;
+  box-sizing: border-box !important;
+}
+
+.app-header-title  { color: #FFF5F8 !important; font-weight: 700 !important; }
+.app-header-subtitle { color: #C8A0B0 !important; }
+
+.app-back-btn {
+  color: #C8A0B0 !important;
+  transition: all 0.2s ease !important;
+}
+.app-back-btn:hover {
+  color: #FFF5F8 !important;
+  background-color: rgba(255, 92, 147, 0.10) !important;
+}
+
+.app-badge {
+  background-color: #2C1422 !important;
+  border: 1px solid rgba(255, 92, 147, 0.14) !important;
+  color: #C8A0B0 !important;
+  font-family: monospace !important;
+}
+
+.lock-screen   { background-color: #100810 !important; }
+.lock-clock    { color: #FFF5F8 !important; font-weight: 300 !important; letter-spacing: -0.02em !important; }
+.lock-date     { color: #C8A0B0 !important; font-weight: 500 !important; }
+
+.lock-notification-card {
+  background-color: rgba(30, 13, 24, 0.90) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 92, 147, 0.16) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.60), 0 0 40px rgba(255, 92, 147, 0.06) !important;
+  border-radius: 20px !important;
+}
+
+.lock-unlock-btn {
+  background: linear-gradient(135deg, #FF5C93, #E8457A) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 28px rgba(255, 92, 147, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+}
+
+.messages-bubble {
+  background-color: #2C1422 !important;
+  border: 1px solid rgba(255, 92, 147, 0.10) !important;
+  color: #FFF5F8 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.messages-send-btn {
+  background: linear-gradient(135deg, #FF5C93, #E8457A) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 20px rgba(255, 92, 147, 0.42) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+}
+
+.gallery-album-card {
+  background-color: #1E0D18 !important;
+  border: 1px solid rgba(255, 92, 147, 0.10) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.music-player-card {
+  background-color: #1E0D18 !important;
+  border: 1px solid rgba(255, 92, 147, 0.10) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.vault-card {
+  background-color: #1E0D18 !important;
+  border: 1px solid rgba(255, 92, 147, 0.10) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.vault-pin-dot {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 9999px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.vault-pin-dot.filled {
+  background-color: #FF5C93 !important;
+  border-color: #FF5C93 !important;
+  box-shadow: 0 0 8px rgba(255, 92, 147, 0.58) !important;
+}
+
+.vault-keypad-btn {
+  background-color: #2C1422 !important;
+  border: 1px solid rgba(255, 92, 147, 0.10) !important;
+  color: #FFF5F8 !important;
+  border-radius: 16px !important;
+}
+
+.vault-keypad-clear {
+  background-color: rgba(255, 92, 147, 0.14) !important;
+  border: 1px solid rgba(255, 92, 147, 0.30) !important;
+  color: #FF5C93 !important;
+  border-radius: 16px !important;
+}
+
+.reasons-card {
+  background-color: #1E0D18 !important;
+  border: 1px solid rgba(255, 92, 147, 0.10) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.reasons-tag {
+  background-color: rgba(255, 92, 147, 0.14) !important;
+  border: 1px solid rgba(255, 92, 147, 0.30) !important;
+  color: #FF5C93 !important;
+}

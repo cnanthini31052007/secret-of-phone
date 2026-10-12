@@ -1,0 +1,379 @@
+/* ==========================================================================
+   NOVA ONE — GLOBAL OS DESIGN SYSTEM: MIDNIGHT BLACK × SILVER × ROMANTIC PINK
+   Applied consistently across all screens, apps, dialogs, and navigation
+   ========================================================================== */
+
+:root {
+  --color-midnight: #08090C;
+  --color-graphite: #202329;
+  --color-panel: #141619;
+  --color-white: #F5F5F7;
+  --color-silver: #A6AAB2;
+  --color-titanium: #777D87;
+  --color-pink: #FF6B9D;
+  --color-pink-hover: #ff85b0;
+  --color-pink-glow: rgba(255, 107, 157, 0.45);
+}
+
+/* Universal Screen Container */
+.screen-container {
+  background-color: #08090C !important;
+  color: #F5F5F7 !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Universal App Header */
+.app-header {
+  background-color: rgba(20, 22, 25, 0.95) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #F5F5F7 !important;
+  box-sizing: border-box !important;
+}
+
+.app-header-title {
+  color: #F5F5F7 !important;
+  font-weight: 700 !important;
+}
+
+.app-header-subtitle {
+  color: #A6AAB2 !important;
+}
+
+.app-back-btn {
+  color: #A6AAB2 !important;
+  transition: all 0.2s ease !important;
+}
+
+.app-back-btn:hover {
+  color: #F5F5F7 !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.app-badge {
+  background-color: #202329 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #A6AAB2 !important;
+  font-family: monospace !important;
+}
+
+/* ==========================================================================
+   1. LOCK SCREEN & NOTIFICATIONS
+   ========================================================================== */
+
+.lock-screen {
+  background-color: #08090C !important;
+}
+
+.lock-clock {
+  color: #F5F5F7 !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.lock-date {
+  color: #A6AAB2 !important;
+  font-weight: 500 !important;
+}
+
+.lock-notification-card {
+  background-color: rgba(20, 22, 25, 0.88) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.60) !important;
+  border-radius: 20px !important;
+}
+
+.lock-unlock-btn {
+  background-color: #FF6B9D !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 24px rgba(255, 107, 157, 0.50) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+  transition: all 0.2s ease !important;
+}
+
+.lock-unlock-btn:hover {
+  background-color: #ff85b0 !important;
+  box-shadow: 0 0 30px rgba(255, 107, 157, 0.65) !important;
+}
+
+/* ==========================================================================
+   2. HOME SCREEN COMPACT STYLES & WALLPAPER
+   ========================================================================== */
+
+.home-welcome-card {
+  padding: 2.5px 10px !important;
+  min-height: 23px !important;
+  font-size: 10.5px !important;
+  border-radius: 9999px !important;
+}
+
+.home-upper-section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding-top: 8px !important;
+}
+
+.home-apps-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  margin-top: 6px !important;
+}
+
+.home-apps-row-1 {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  column-gap: 8px !important;
+  justify-items: center !important;
+  width: 100% !important;
+}
+
+.home-apps-row-2 {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  margin-top: 7px !important;
+  width: 100% !important;
+}
+
+.home-app-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  width: 58px !important;
+}
+
+.home-app-icon-container {
+  width: clamp(38px, 9.5vw, 42px) !important;
+  height: clamp(38px, 9.5vw, 42px) !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 42px !important;
+  max-height: 42px !important;
+  border-radius: 11px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.home-app-icon {
+  width: clamp(19px, 5vw, 21px) !important;
+  height: clamp(19px, 5vw, 21px) !important;
+  display: block !important;
+}
+
+.home-app-label {
+  font-size: clamp(10px, 2.6vw, 11px) !important;
+  line-height: 13px !important;
+  margin-top: 3px !important;
+  max-width: 60px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-weight: 500 !important;
+  color: #F8F5FF !important;
+}
+
+.home-app-badge {
+  position: absolute !important;
+  top: -3px !important;
+  right: -3px !important;
+  padding: 1px 3.5px !important;
+  font-size: 8px !important;
+  line-height: 9.5px !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+}
+
+.home-dock-container {
+  padding: 4px 12px !important;
+  min-height: 42px !important;
+  border-radius: 16px !important;
+  margin-bottom: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around !important;
+  width: 100% !important;
+  max-width: 270px !important;
+  box-sizing: border-box !important;
+}
+
+.home-dock-icon-btn {
+  width: clamp(34px, 8.5vw, 36px) !important;
+  height: clamp(34px, 8.5vw, 36px) !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.home-dock-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+#homeWallpaperLayer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  background-color: #08090C !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+#homeWallpaperImg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+.home-protective-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 9, 12, 0.40) 0%,
+    rgba(8, 9, 12, 0.15) 40%,
+    rgba(8, 9, 12, 0.35) 80%,
+    rgba(8, 9, 12, 0.70) 100%
+  ) !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   3. MESSAGES APP STYLES
+   ========================================================================== */
+
+.messages-bubble {
+  background-color: #202329 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #F5F5F7 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.messages-send-btn {
+  background-color: #FF6B9D !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.40) !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
+}
+
+/* ==========================================================================
+   4. GALLERY APP STYLES
+   ========================================================================== */
+
+.gallery-album-card {
+  background-color: #141619 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+.gallery-album-card:hover {
+  border-color: rgba(255, 107, 157, 0.40) !important;
+  box-shadow: 0 0 16px rgba(255, 107, 157, 0.18) !important;
+}
+
+/* ==========================================================================
+   5. MUSIC APP STYLES
+   ========================================================================== */
+
+.music-player-card {
+  background-color: #141619 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==========================================================================
+   6. NOTES & VAULT PIN SCREEN STYLES
+   ========================================================================== */
+
+.vault-card {
+  background-color: #141619 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.vault-pin-dot {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 9999px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.20) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+.vault-pin-dot.filled {
+  background-color: #FF6B9D !important;
+  border-color: #FF6B9D !important;
+  box-shadow: 0 0 8px rgba(255, 107, 157, 0.55) !important;
+}
+
+.vault-keypad-btn {
+  background-color: #202329 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #F5F5F7 !important;
+  border-radius: 16px !important;
+  transition: all 0.15s ease !important;
+}
+
+.vault-keypad-btn:hover {
+  background-color: #2a2d36 !important;
+}
+
+.vault-keypad-clear {
+  background-color: rgba(255, 107, 157, 0.15) !important;
+  border: 1px solid rgba(255, 107, 157, 0.30) !important;
+  color: #FF6B9D !important;
+  border-radius: 16px !important;
+}
+
+/* ==========================================================================
+   7. SPECIAL REASONS STYLES
+   ========================================================================== */
+
+.reasons-card {
+  background-color: #141619 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.25s ease !important;
+}
+
+.reasons-card:hover {
+  border-color: rgba(255, 107, 157, 0.40) !important;
+  box-shadow: 0 0 24px rgba(255, 107, 157, 0.20) !important;
+}
+
+.reasons-tag {
+  background-color: rgba(255, 107, 157, 0.15) !important;
+  border: 1px solid rgba(255, 107, 157, 0.30) !important;
+  color: #FF6B9D !important;
+}
